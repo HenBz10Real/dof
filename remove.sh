@@ -1,3 +1,4 @@
+source $FUNCTION
 sleep 2.5 && echo
 echo "
 █▄░█ █▀█ █▀█   ▀█▀ █░█░█ █▀▀ ▄▀█ █▄▀ █▀
