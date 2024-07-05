@@ -1,4 +1,5 @@
 #!/system/bin/sh
+source $FUNCTION
 ver="6.2 Online"
 dev=@HenVx0
 echo ""
