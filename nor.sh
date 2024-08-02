@@ -30,8 +30,6 @@ cmd otadexopt cleanup > /dev/null 2>&1
 sleep 1 && echo
 #Apps optimazion with jit compiler
 for app in $(cmd package list packages | cut -f 2 -d ":"); do
-cmd package compile -m speed-profile -f "$app"> /dev/null 2>&1 && echo Optimization Apps || echo Device not support
-cmd otadexopt next "$app"
 cmd appops set "$app" RUN_IN_BACKGROUND ignore> /dev/null 2>&1 && echo Optimization Apps || echo Device not support
 done
 for app in $(cmd package list packages | cut -f 2 -d ":"); do
