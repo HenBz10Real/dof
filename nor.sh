@@ -41,6 +41,8 @@ setprop debug.hwui.use_hint_manager true
 setprop debug.hwui.target_cpu_time_percent 85
 setprop debug.hwui.profile false
 setprop debug.renderengine.skia_tracing_enabled false
+#mengatur thermal service
+cmd thermalservice override-status 0
 #Doze tweaks form android without root
 settings put global device_idle_constants light_after_inactive_to 2592000000
 #trim memory ui system ( untuk mengurangi penggunaan memory sebanyak mungkin )
