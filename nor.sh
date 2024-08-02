@@ -22,8 +22,6 @@ echo "Developer : ${dev} "
 echo "Version : ${ver} "
 echo "Source : - "
 #function resource @Henpeex copy and ekstrak file and automatic running
-#Use render smooth
-setprop debug.hwui.renderer skiagl
 #Mengontrol apakah HWUI akan mengirimkan petunjuk waktu ke HintManager
 #penjadwalan CPU yang lebih baik.
 setprop debug.hwui.use_hint_manager true
