@@ -2,6 +2,17 @@
 source $FUNCTION
 ver="7.0 Online"
 dev=@HenVx0
+printer() {
+	text="$1"
+	color="$2"
+	i=0
+	while [ $i -lt ${#text} ]; do
+		echo -en "\e[${color}m${text:$i:1}\e[0m"
+		sleep 0.02
+		i=$((i + 1))
+	done
+	echo
+}
 echo ""
 echo "
 █▄░█ █▀█ █▀█   ▀█▀ █░█░█ █▀▀ ▄▀█ █▄▀ █▀
