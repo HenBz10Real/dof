@@ -51,6 +51,6 @@ find "$app" -iname "cache" -exec rm -rf {} +
 done
 sleep 1 && echo 
 printer "Succes, done installing your device."
-cmd notification post -i /sdcard/logo.png -S inbox -t 'NORTWEAKS+' 'tag' 'Programs Running Always'
+cmd notification post -S bigtext -t 'NORTWEAKS' 'Tag' 'Programs Running Always'
 sleep 2 && echo
 echo ""
