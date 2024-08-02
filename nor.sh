@@ -51,7 +51,9 @@ sleep 1 && echo
 for app in $(cmd package list packages | cut -f 2 -d ":"); do
 cmd appops set "$app" RUN_IN_BACKGROUND ignore> /dev/null 2>&1 && echo Optimization Apps || echo Device not support
 done
-main_cache > /dev/null 2>&1
+for pkg in $(pm list packages | cut -f 2 -d ":"); do
+    find "/sdcard/Android/data/$pkg" -iname "cache" -exec rm -rf {} +
+done
 for app in $(cmd package list packages | cut -f 2 -d ":"); do
 find "$app" -iname "cache" -exec rm -rf {} +
 find "$app/files" -iname "cache" -exec rm -rf {} +
