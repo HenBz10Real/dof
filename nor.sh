@@ -13,6 +13,16 @@ printer() {
 	done
 	echo
 }
+main_cache() {
+  for package in $(echo $PACKAGES | cut -d ":" -f 2); do
+      if whitelist | grep -q "$package" >/dev/null 2>&1; then
+        continue
+      else
+        cache_path="/sdcard/Android/data/${package}/cache"
+        [ -e "$cache_path" ] && rm -rf "$cache_path" > /dev/null 2>&1
+      fi
+  done
+}
 echo ""
 echo "
 █▄░█ █▀█ █▀█   ▀█▀ █░█░█ █▀▀ ▄▀█ █▄▀ █▀
