@@ -1,6 +1,6 @@
 #!/system/bin/sh
 source $FUNCTION
-ver="6.2 Online"
+ver="7.0 Online"
 dev=@HenVx0
 echo ""
 echo "
@@ -24,6 +24,8 @@ setprop debug.hwui.profile false
 setprop debug.renderengine.skia_tracing_enabled false
 #Doze tweaks form android without root
 settings put global device_idle_constants light_after_inactive_to 2592000000
+#trim memory ui system ( untuk mengurangi penggunaan memory sebanyak mungkin )
+am send-trim-memory --user 0 com.android.systemui RUNNING_CRITICAL
 cmd otadexopt cleanup > /dev/null 2>&1
 sleep 1 && echo
 #Apps optimazion with jit compiler
@@ -36,9 +38,7 @@ for app in $(cmd package list packages | cut -f 2 -d ":"); do
 find "$app" -iname "cache" -exec rm -rf {} +
 find "$app/files" -iname "cache" -exec rm -rf {} +
 find "$app/file" -iname "cache" -exec rm -rf {} +
-find "$app" -iname "UnityCache" -exec rm -rf {} +
-find "$app/files" -iname "UnityCache" -exec rm -rf {} +
-find "$app/file" -iname "UnityCache" -exec rm -rf {} +
+find "$app" -iname "cache" -exec rm -rf {} +
 done
 sleep 1 && echo 
 echo "Succes, done installing your device."
