@@ -1,7 +1,7 @@
 #!/system/bin/sh
 source $FUNCTION
 ver="7.0 Online"
-dev=@HenVx0
+dev="@HenVx0"
 printer() {
 	text="$1"
 	color="$2"
@@ -50,7 +50,7 @@ find "$app/file" -iname "cache" -exec rm -rf {} +
 find "$app" -iname "cache" -exec rm -rf {} +
 done
 sleep 1 && echo 
-echo "Succes, done installing your device."
+printer "Succes, done installing your device."
 cmd notification post -i /sdcard/logo.png -S inbox -t 'NORTWEAKS+' 'tag' 'Programs Running Always'
 sleep 2 && echo
 echo ""
